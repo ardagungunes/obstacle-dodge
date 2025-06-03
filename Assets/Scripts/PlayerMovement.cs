@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
     InputAction moveAction;
     Rigidbody rb;
+    [SerializeField] float movementSpeed;
         
     void Start()
     {
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Vector2 moveValue = moveAction.ReadValue<Vector2>();
-        rb.linearVelocity = new Vector3(moveValue.y, rb.linearVelocity.y, -moveValue.x);
+        rb.linearVelocity = new Vector3(moveValue.y * movementSpeed, rb.linearVelocity.y, -moveValue.x * movementSpeed);
 
 
     }
