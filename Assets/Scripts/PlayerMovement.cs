@@ -19,6 +19,7 @@ public class CameraRelativeMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         Vector2 input = moveAction.ReadValue<Vector2>();
 
         // Camera-relative directions
