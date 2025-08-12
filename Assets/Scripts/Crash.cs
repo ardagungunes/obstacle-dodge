@@ -19,7 +19,10 @@ public class Crash : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        meshRenderer.material = material;
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            meshRenderer.material = material;
+        }
 
     }
 }
