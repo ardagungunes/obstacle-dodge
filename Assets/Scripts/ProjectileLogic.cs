@@ -18,6 +18,17 @@ public class ProjectileLogic : MonoBehaviour
     void Update()
     {
         transform.position += direction * projectileSpeed * Time.deltaTime;
+        DestroyProjectile();
 
+    }
+
+    
+
+    void DestroyProjectile()
+    {
+        if(Vector3.Distance(transform.position, playerPosition) <= 0.1f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
